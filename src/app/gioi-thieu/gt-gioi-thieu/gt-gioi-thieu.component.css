@@ -1,0 +1,22 @@
+h3{
+  font-size: 18px;
+  padding: 15px 0;
+  border-bottom: 1px dotted #dedede;
+}
+
+.img-container{
+  height: 500px;
+}
+
+.img-container img{
+  height: 100%;
+  object-fit: cover;
+}
+
+p{
+  margin-bottom: 18px;
+}
+
+.p-title{
+  font-weight: 500;
+}

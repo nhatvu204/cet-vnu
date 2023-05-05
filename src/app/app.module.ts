@@ -28,14 +28,13 @@ import { GtToChucComponent } from './gioi-thieu/gt-to-chuc/gt-to-chuc.component'
 import { GtChucNangComponent } from './gioi-thieu/gt-chuc-nang/gt-chuc-nang.component';
 import { GtCsvcComponent } from './gioi-thieu/gt-csvc/gt-csvc.component';
 
-
 const appRoute: Routes = [
   {path:'', component: HomeComponent},
   // {path:'', redirectTo: 'Home', pathMatch: 'full'},
   {path: 'Home', component: HomeComponent},
   {path: 'About', component: GioiThieuComponent,
     children: [
-      {path:'', component: GtGioiThieuComponent},
+      {path:'', redirectTo:'gioi-thieu', pathMatch:'full'},
       {path:'gioi-thieu',component: GtGioiThieuComponent},
       {path:'co-cau-to-chuc',component: GtToChucComponent},
       {path:'chuc-nang-nhiem-vu',component: GtChucNangComponent},
@@ -62,7 +61,8 @@ const appRoute: Routes = [
     FooterComponent,
     HoverDirective,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    GioiThieuComponent
   ],
   imports: [
     BrowserModule,
