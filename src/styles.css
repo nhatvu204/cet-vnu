@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'D:\Workspace\angular\cet-vnu\node_modules\ngx-owl-carousel-o\lib\styles\prebuilt-themes\owl.carousel.css';
+@import 'D:\Workspace\angular\cet-vnu\node_modules\ngx-owl-carousel-o\lib\styles\prebuilt-themes\owl.theme.default.css';
+
+html{
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+.fs-8{
+  font-size: 14px;
+}
+
+.material-icons{
+  padding: 10px;
+  font-size: 17px;
+  color: #d94277;
+}
+
+.bi{
+  padding: 10px;
+  font-size: 14px;
+}
+
+.bi-facebook, .bi-twitter{
+  color: #0672b6;
+}
+
+.bi-youtube{
+  color: #ff0000;
+}
+
+
+.title{
+  margin-bottom: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.title h3{
+  font-weight: 600;
+  color: #9f224e;
+}
+
+.owl-theme .owl-nav{
+  position: absolute;
+  top: -60px;
+  right: 0;
+}
+
+.owl-prev, .owl-next{
+  width: 30px;
+  height: 30px;
+}
+
+.date-time{
+  font-size: 16px;
+  opacity: 0.8;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,50 @@
+<div class="container d-flex">
+  <div id="tests">
+    <div class="title">
+      <h3>CÁC BÀI THI</h3>
+    </div>
+    <div class="tests-container">
+      <div class="tests-item">
+        <img appHover src="https://cet.vnu.edu.vn/assets/images/TTKT/cat-danh-gia-nang-luc.png" alt="">
+      </div>
+      <div class="tests-item">
+        <img appHover src="https://cet.vnu.edu.vn/assets/images/TTKT/cat-sau-dai-hoc.png" alt="">
+      </div>
+      <div class="tests-item">
+        <img appHover src="https://cet.vnu.edu.vn/assets/images/TTKT/cat-trung-hoc-co-so.png" alt="">
+      </div>
+      <div class="tests-item">
+        <img appHover src="https://cet.vnu.edu.vn/assets/images/TTKT/cat-tieng-anh.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div id="noti" class="flex-grow-1">
+    <div class= "noti-container shadow">
+      <div class="noti-title d-flex align-items-center">
+        <img src="https://cet.vnu.edu.vn/assets/images/TTKT/loa-tbao.png" alt="">
+        <h3>THÔNG BÁO</h3>
+      </div>
+
+      <div class="noti-list">
+        <div class="noti-item" *ngFor="let i of notis">
+          <a href="" class="d-flex p-2">
+            <div>
+              {{i.title}}
+              <img src="https://cet.vnu.edu.vn/assets/images/TTKT/icon_new.gif" width="31px" height="15px" alt="">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="noti-more">
+        <a href="">
+          Xem thêm
+          <i class="material-icons">
+            arrow_forward
+          </i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

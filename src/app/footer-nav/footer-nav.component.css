@@ -1,0 +1,20 @@
+.out-container{
+  background-color: #1a9547;
+  height: 77px;
+  margin-bottom: 50px;
+}
+
+.container{
+  height: 100%;
+}
+
+.nav-item{
+  padding: 0 20px;
+}
+
+.nav-item a{
+  color: #fff;
+  font-size: 18px;
+  line-height: 77px;
+}
+

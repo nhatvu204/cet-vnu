@@ -1,0 +1,22 @@
+<div class="container" style="padding: 50px 0;">
+  <div class="title">
+    <h3>HOẠT ĐỘNG DỊCH VỤ</h3>
+  </div>
+  <div class="d-flex">
+    <div class="activities-container">
+      <div class="activity-item" *ngFor="let i of activities; first as first" [class.highlight] = "first" >
+        <div class="date-time d-flex align-items-center">
+          <i class="material-icons">videocam</i>
+          <i class="material-icons">calendar_month</i>
+          <div style="padding-left: 10px;">
+            {{i.date}}
+          </div>
+        </div>
+        <a href="">{{i.title}}</a>
+      </div>
+    </div>
+    <div class="video-container flex-fill">
+      <iframe class="player" src="https://www.youtube.com/embed/QVjjUKKu_uA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+.address{
+  width: 570px;
+  padding-right: 20px;
+}
+
+.address p{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 17px;
+  padding-bottom: 9px;
+  line-height: 23px;
+}
+
+.address-container{
+  padding-left: 103px;
+}
+
+.menu{
+  width: 300px;
+  padding-right: 15px;
+}
+
+.menu a{
+  color: #000;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+}
+
+.menu .menu-item{
+  padding: 10px;
+}
+
+.map{
+  padding-left: 80px;
+}
+
+.title{
+  margin-bottom: 8px;
+}
+
+.title h3{
+  color: #268d2a;
+  font-size: 24px;
+}
+
+.map-header p{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 22px;
+}
