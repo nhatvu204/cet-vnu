@@ -1,0 +1,21 @@
+h3{
+  font-size: 18px;
+  padding: 15px 0;
+  border-bottom: 1px dotted #dedede;
+}
+
+h4{
+  font-size: 16px;
+  text-decoration: underline;
+  padding-top: 15px;
+}
+
+.img-container{
+  padding: 15px 0;
+}
+
+p{
+  margin-bottom: 2px;
+}
+
+
