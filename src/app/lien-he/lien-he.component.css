@@ -1,0 +1,66 @@
+.header{
+  height: 89px;
+}
+
+.header h3{
+  font-size: 20px;
+  line-height: 89px;
+}
+
+.info-container{
+  width: 625px;
+  padding: 40px 30px;
+  background: #f3f3f3;
+}
+
+.info-container h4{
+  padding-bottom: 40px;
+}
+
+.divider{
+  height: 1px;
+  width: 60px;
+  border-bottom: 2px solid #0c6e39;
+  top: 35px;
+  left: calc(50% - 30px)
+}
+
+h5{
+  color: #00377a;
+  font-size: 16px;
+}
+
+.info-container p{
+  margin-bottom: 12px;
+}
+
+.form-container{
+  width: 625px;
+}
+
+.form-container h4{
+  margin-bottom: 20px;
+}
+
+input{
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da;
+}
+
+textarea{
+  border: 1px solid #ced4da;
+}
+
+label{
+  margin-bottom: 8px;
+}
+
+.btn{
+  margin-top: 12px;
+  width: 100%;
+  background: #28a745;
+  border-radius: 0;
+  color: #fff;
+  font-weight: 500;
+}
