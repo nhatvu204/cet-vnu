@@ -1,0 +1,13 @@
+h3{
+  font-size: 18px;
+  padding: 15px 0;
+  border-bottom: 1px dotted #dedede;
+}
+
+.img-container{
+  width: 500px;
+}
+
+.img-container img{
+  width: 100%;
+}
