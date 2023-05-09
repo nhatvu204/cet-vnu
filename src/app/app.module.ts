@@ -27,6 +27,7 @@ import { GtGioiThieuComponent } from './gioi-thieu/gt-gioi-thieu/gt-gioi-thieu.c
 import { GtToChucComponent } from './gioi-thieu/gt-to-chuc/gt-to-chuc.component';
 import { GtChucNangComponent } from './gioi-thieu/gt-chuc-nang/gt-chuc-nang.component';
 import { GtCsvcComponent } from './gioi-thieu/gt-csvc/gt-csvc.component';
+import { ChuyenMucComponent } from './chuyen-muc/chuyen-muc.component';
 
 const appRoute: Routes = [
   {path:'', component: HomeComponent},
@@ -39,9 +40,12 @@ const appRoute: Routes = [
       {path:'co-cau-to-chuc',component: GtToChucComponent},
       {path:'chuc-nang-nhiem-vu',component: GtChucNangComponent},
       {path:'co-so-vat-chat',component: GtCsvcComponent}]},
-  {path: 'News', component: TinTucComponent},
-  {path: 'Tests', component: KyThiComponent},
-  {path: 'Activities', component: HoatDongComponent},
+  {path:'Categories', component: ChuyenMucComponent,
+    children:[
+      {path:'', redirectTo:'Categories', pathMatch:'full'},
+      {path:'tin-tuc', component: TinTucComponent},
+      {path:'ky-thi', component: KyThiComponent},
+      {path: 'hoat-dong', component: HoatDongComponent}]},
   {path: 'Contact', component: LienHeComponent},
   {path:'**', component: ErrorComponent}
 ]
@@ -62,7 +66,12 @@ const appRoute: Routes = [
     HoverDirective,
     HomeComponent,
     ErrorComponent,
-    GioiThieuComponent
+    GioiThieuComponent,
+    ChuyenMucComponent,
+    TinTucComponent,
+    KyThiComponent,
+    HoatDongComponent,
+    LienHeComponent
   ],
   imports: [
     BrowserModule,

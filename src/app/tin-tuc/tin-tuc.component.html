@@ -1,1 +1,20 @@
-<p>tin-tuc works!</p>
+<div class="category-title d-flex align-items-center">
+  <div></div>
+  <h4>
+    TIN TỨC & SỰ KIỆN
+  </h4>
+</div>
+<div class="news-container">
+  <div class="news-item" *ngFor="let i of notiCopy">
+    <a href="">{{i.title}}</a>
+    <p class="date-time">{{i.date}}</p>
+    <div class="row">
+      <div class="col-4">
+        <img src="{{i.img}}" alt="" style="width: 100%;">
+      </div>
+      <div class="col-8" style="font-size: 13px;">
+        <p>{{i.short}}</p>
+      </div>
+    </div>
+  </div>
+</div>

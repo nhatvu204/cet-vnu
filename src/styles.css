@@ -60,3 +60,27 @@ a{
   opacity: 0.8;
   margin-bottom: 16px;
 }
+
+
+/* categories title */
+.category-title{
+  height: 52px;
+  background: #c3151c;
+  padding: 15px 20px 15px 20px;
+  margin-bottom: 30px;
+}
+
+.category-title div{
+  width: 3.5px;
+  height: 15px;
+  background: #fff;
+  margin-right: 5px;
+}
+
+.category-title h4{
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+  font-weight: 600;
+}
+/*  */
