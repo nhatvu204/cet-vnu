@@ -1,0 +1,29 @@
+.dh-container{
+  height: max-content;
+  width: 896px;
+}
+
+.dh-item-outer{
+  margin-bottom: 50px;
+}
+
+.date-time{
+  font-size: 13.5px;
+  font-style: italic;
+  margin-bottom: 5px;
+  margin-top: 8px;
+}
+
+.col-8{
+  text-align: justify;
+}
+
+a{
+  color: #000;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+a:hover{
+  color: #ed1c24;
+}

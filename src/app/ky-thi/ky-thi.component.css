@@ -1,0 +1,33 @@
+.tin-moi{
+  width: 896px;
+  margin-bottom: 50px;
+}
+
+.tm-title{
+  background: #c3151c;
+}
+
+.links{
+  width: 0;
+  height: 0;
+  background: none;
+  margin-right: none;
+}
+
+a{
+  font-weight: 500;
+}
+
+.tm-item a{
+  color: #000;
+  font-size: 14px;
+}
+
+.tm-item a:hover{
+  color: #e50e0e;
+}
+
+.tm-highlight a{
+  color: #e50e0e;
+  font-size: 20px;
+}

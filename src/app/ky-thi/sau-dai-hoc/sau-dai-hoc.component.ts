@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { notifications } from '../Services/notifications.service';
+import { notifications } from 'src/app/Services/notifications.service';
 
 @Component({
-  selector: 'app-tin-tuc',
-  templateUrl: './tin-tuc.component.html',
-  styleUrls: ['./tin-tuc.component.css'],
-  providers: [notifications]
+  selector: 'app-sau-dai-hoc',
+  templateUrl: './sau-dai-hoc.component.html',
+  styleUrls: ['./sau-dai-hoc.component.css']
 })
-export class TinTucComponent implements OnInit{
+export class SauDaiHocComponent implements OnInit {
   constructor(private noti: notifications){
 
   }
-  ngOnInit(){
+
+  ngOnInit() {
     for(let i=0; i < this.noti.notis.length; i++){
       this.notiCopy[i] = this.noti.notis[i];
     }
   }
+
   notiCopy: {id:string,tag: string, title: string, date: string, img: string, short: string}[] = [];
 }

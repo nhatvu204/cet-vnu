@@ -28,6 +28,9 @@ import { GtToChucComponent } from './gioi-thieu/gt-to-chuc/gt-to-chuc.component'
 import { GtChucNangComponent } from './gioi-thieu/gt-chuc-nang/gt-chuc-nang.component';
 import { GtCsvcComponent } from './gioi-thieu/gt-csvc/gt-csvc.component';
 import { ChuyenMucComponent } from './chuyen-muc/chuyen-muc.component';
+import { DaiHocComponent } from './ky-thi/dai-hoc/dai-hoc.component';
+import { ChungComponent } from './ky-thi/chung/chung.component';
+import { SauDaiHocComponent } from './ky-thi/sau-dai-hoc/sau-dai-hoc.component';
 
 const appRoute: Routes = [
   {path:'', component: HomeComponent},
@@ -45,7 +48,11 @@ const appRoute: Routes = [
       {path:'', redirectTo:'Categories', pathMatch:'full'},
       {path:'tin-tuc', component: TinTucComponent},
       {path:'ky-thi', component: KyThiComponent},
-      {path: 'hoat-dong', component: HoatDongComponent}]},
+      {path: 'hoat-dong', component: HoatDongComponent},
+      {path: 'tuyen-sinh-dai-hoc', component: DaiHocComponent},
+      {path: 'hoc-phan-chung', component: ChungComponent},
+      {path: 'tuyen-sinh-sau-dai-hoc', component: SauDaiHocComponent}
+    ]},
   {path: 'Contact', component: LienHeComponent},
   {path:'**', component: ErrorComponent}
 ]
@@ -71,7 +78,10 @@ const appRoute: Routes = [
     TinTucComponent,
     KyThiComponent,
     HoatDongComponent,
-    LienHeComponent
+    LienHeComponent,
+    DaiHocComponent,
+    ChungComponent,
+    SauDaiHocComponent
   ],
   imports: [
     BrowserModule,

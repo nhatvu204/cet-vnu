@@ -8,7 +8,7 @@ import { notifications } from '../Services/notifications.service';
   providers: [notifications]
 })
 export class ChuyenMucComponent implements OnInit {
-  notiCopy: {id:string, title: string, date: string, img: string, short: string}[] = [];
+  notiCopy: {id:string,tag: string, title: string, date: string, img: string, short: string}[] = [];
   constructor(private noti: notifications){
 
   }

@@ -1,0 +1,22 @@
+<div class="sdh-container">
+  <div class="category-title d-flex align-items-center">
+    <div></div>
+    <h4>TUYỂN SINH SAU ĐẠI HỌC</h4>
+  </div>
+
+  <div class="sdh-item-outer" *ngFor="let i of notiCopy">
+    <div class="sdh-item-inner" *ngIf="i.tag == 'sau dai hoc'">
+      <a href="">{{i.title}}</a>
+      <p class="date-time">{{i.date}}</p>
+      <div class="row">
+        <div class="col-4">
+          <img src="{{i.img}}" alt="" style="width: 100%;">
+        </div>
+        <div class="col-8" style="font-size: 13px;">
+          <p>{{i.short}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
