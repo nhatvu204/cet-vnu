@@ -31,6 +31,8 @@ import { ChuyenMucComponent } from './chuyen-muc/chuyen-muc.component';
 import { DaiHocComponent } from './ky-thi/dai-hoc/dai-hoc.component';
 import { ChungComponent } from './ky-thi/chung/chung.component';
 import { SauDaiHocComponent } from './ky-thi/sau-dai-hoc/sau-dai-hoc.component';
+import { KiemTraComponent } from './hoat-dong/kiem-tra/kiem-tra.component';
+import { TapHuanComponent } from './hoat-dong/tap-huan/tap-huan.component';
 
 const appRoute: Routes = [
   {path:'', component: HomeComponent},
@@ -51,7 +53,9 @@ const appRoute: Routes = [
       {path: 'hoat-dong', component: HoatDongComponent},
       {path: 'tuyen-sinh-dai-hoc', component: DaiHocComponent},
       {path: 'hoc-phan-chung', component: ChungComponent},
-      {path: 'tuyen-sinh-sau-dai-hoc', component: SauDaiHocComponent}
+      {path: 'tuyen-sinh-sau-dai-hoc', component: SauDaiHocComponent},
+      {path: 'tap-huan-khao-thi', component: TapHuanComponent},
+      {path: 'kiem-tra-kien-thuc', component: KiemTraComponent}
     ]},
   {path: 'Contact', component: LienHeComponent},
   {path:'**', component: ErrorComponent}
@@ -81,7 +85,9 @@ const appRoute: Routes = [
     LienHeComponent,
     DaiHocComponent,
     ChungComponent,
-    SauDaiHocComponent
+    SauDaiHocComponent,
+    KiemTraComponent,
+    TapHuanComponent
   ],
   imports: [
     BrowserModule,

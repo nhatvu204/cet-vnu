@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { notifications } from '../Services/notifications.service';
 import { Title } from '../Services/title.service';
 import { HeaderChange } from '../Services/header.service';
@@ -9,7 +9,7 @@ import { HeaderChange } from '../Services/header.service';
   templateUrl: './ky-thi.component.html',
   styleUrls: ['./ky-thi.component.css']
 })
-export class KyThiComponent implements OnInit{
+export class KyThiComponent implements OnInit,AfterViewInit{
   constructor(private noti: notifications, private title: Title, private headerChange: HeaderChange){
     this.headerChange.changeHeader('KHẢO THÍ');
   }
@@ -21,8 +21,12 @@ export class KyThiComponent implements OnInit{
       }
     }
 
-    this.title.changeTitle('Khảo thí');
+
     // this.headerChange.changeHeader('KHẢO THÍ');
+  }
+
+  ngAfterViewInit(){
+    this.title.changeTitle('Khảo thí');
   }
 
   ngOnDestroy(){

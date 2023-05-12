@@ -1,0 +1,22 @@
+<div class="kt-container">
+  <div class="category-title d-flex align-items-center">
+    <div></div>
+    <h4>KIỂM TRA KIẾN THỨC</h4>
+  </div>
+
+  <div class="kt-item-outer" *ngFor="let i of notiCopy">
+    <div class="kt-item-inner" *ngIf="i.actTag == 'kien-thuc'">
+      <a href="">{{i.title}}</a>
+      <p class="date-time">{{i.date}}</p>
+      <div class="row">
+        <div class="col-4">
+          <img src="{{i.img}}" alt="" style="width: 100%;">
+        </div>
+        <div class="col-8" style="font-size: 13px;">
+          <p>{{i.short}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
