@@ -13,12 +13,12 @@ export class KyThiComponent implements OnInit{
 
   ngOnInit() {
     for(let i=0; i < this.noti.notis.length; i++){
-      if(this.noti.notis[i].tag == 'HSA'){
+      if(this.noti.notis[i].testsTag == 'HSA'){
         this.notiCopy.push(this.noti.notis[i]);
       }
     }
     console.log(this.notiCopy);
   }
 
-  notiCopy: {id:string,tag: string, title: string, date: string, img: string, short: string}[] = [];
+  notiCopy: {id:string, actTag:string, testsTag: string, title: string, date: string, img: string, short: string}[] = [];
 }
