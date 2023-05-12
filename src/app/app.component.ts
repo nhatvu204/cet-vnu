@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o/public_api';
 
 @Component({
@@ -6,7 +6,12 @@ import { OwlOptions } from 'ngx-owl-carousel-o/public_api';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'cet-vnu';
+export class AppComponent implements OnInit{
+  constructor(){
 
+  }
+
+  ngOnInit(){
+
+  }
 }
