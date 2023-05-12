@@ -1,14 +1,15 @@
-.header{
+.header1{
   height: 89px;
 }
 
-.header h3{
+.header1 h3{
   font-size: 20px;
   line-height: 89px;
 }
 
 .info-container{
   width: 625px;
+  height: 425px;
   padding: 40px 30px;
   background: #f3f3f3;
 }

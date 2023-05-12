@@ -1,6 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, AfterContentInit } from '@angular/core';
 import { notifications } from '../Services/notifications.service';
 import { Title } from '../Services/title.service';
+import { HeaderChange } from '../Services/header.service';
 
 @Component({
   selector: 'app-tin-tuc',
@@ -9,7 +10,7 @@ import { Title } from '../Services/title.service';
   providers: [notifications]
 })
 export class TinTucComponent implements OnInit, OnDestroy{
-  constructor(private noti: notifications, private title: Title){
+  constructor(private noti: notifications, private title: Title, private headerChange: HeaderChange){
 
   }
   ngOnInit(){
@@ -17,6 +18,7 @@ export class TinTucComponent implements OnInit, OnDestroy{
       this.notiCopy[i] = this.noti.notis[i];
     }
     this.title.changeTitle('Tin tức & Sự kiện');
+    this.headerChange.changeHeader('TIN TỨC - SỰ KIỆN');
   }
 
   ngOnDestroy(){
