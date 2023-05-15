@@ -10,7 +10,7 @@ import { notifications } from '../Services/notifications.service';
 })
 export class HoatDongComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(private noti: notifications, private title: Title, private headerChange: HeaderChange){
-    this.headerChange.changeHeader('KHẢO THÍ');
+    this.headerChange.changeHeader('HOẠT ĐỘNG DỊCH VỤ');
   }
 
   ngOnInit() {

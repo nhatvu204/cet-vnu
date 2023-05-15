@@ -78,3 +78,13 @@ sup{
 textarea{
   padding: 10px;
 }
+
+
+small{
+  font-size: 10px;
+  color: #dc3545;
+}
+
+.submitted-invalid{
+  border: #dc3545 1px solid;
+}
