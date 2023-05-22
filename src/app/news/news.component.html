@@ -4,29 +4,33 @@
   </div>
   <div class="news-container">
     <div class="highlighted-news">
-      <a style="text-decoration: none;" href="">
-        <img [src]="highlightedNews.img" alt="">
-        <div class="banner">
-          <a href="">
-            {{highlightedNews.title}}
+      <div *ngFor="let i of notiList; index as index">
+        <div *ngIf="index == 0">
+          <a style="text-decoration: none;" href="">
+            <img src="{{imgUrl[index]}}" alt="">
+            <div class="banner">
+              <a href="">
+                {{i['name']}}
+              </a>
+            </div>
           </a>
         </div>
-      </a>
+      </div>
     </div>
     <div class="news-item" *ngFor="let i of news">
-      <a href=""><img [src]="i.img" alt=""></a>
-      <div class="news-text">
-        <div class="date-time d-flex align-items-center">
-          <i class="material-icons">calendar_month</i>
-          {{i.date}}, {{i.time}}
+        <a href=""><img [src]="i.img" alt=""></a>
+        <div class="news-text">
+          <div class="date-time d-flex align-items-center">
+            <i class="material-icons">calendar_month</i>
+            {{i.date}}, {{i.time}}
+          </div>
+          <a href="">
+            {{i.title}}
+          </a>
+          <div class="details">
+            <a href="">Xem chi tiết</a>
+          </div>
         </div>
-        <a href="">
-          {{i.title}}
-        </a>
-        <div class="details">
-          <a href="">Xem chi tiết</a>
-        </div>
-      </div>
     </div>
   </div>
 </div>
