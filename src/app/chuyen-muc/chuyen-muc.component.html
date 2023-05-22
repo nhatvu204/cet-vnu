@@ -13,10 +13,10 @@
       <h3>THÔNG BÁO</h3>
     </div>
     <div class="noti-container">
-      <div class="noti-item" *ngFor="let i of notiCopy">
+      <div class="noti-item" *ngFor="let i of notiList">
         <a href="" class="d-flex p-2">
           <div>
-            {{i.title}}
+            {{i['name']}}
             <img src="https://cet.vnu.edu.vn/assets/images/TTKT/icon_new.gif" width="31px" height="15px" alt="">
           </div>
         </a>

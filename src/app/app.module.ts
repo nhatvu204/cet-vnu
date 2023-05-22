@@ -34,6 +34,7 @@ import { ChungComponent } from './ky-thi/chung/chung.component';
 import { SauDaiHocComponent } from './ky-thi/sau-dai-hoc/sau-dai-hoc.component';
 import { KiemTraComponent } from './hoat-dong/kiem-tra/kiem-tra.component';
 import { TapHuanComponent } from './hoat-dong/tap-huan/tap-huan.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoute: Routes = [
   {path:'', component: HomeComponent},
@@ -95,7 +96,8 @@ const appRoute: Routes = [
     BrowserAnimationsModule,
     CarouselModule,
     RouterModule.forRoot(appRoute),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

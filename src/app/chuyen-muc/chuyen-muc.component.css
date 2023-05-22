@@ -30,6 +30,10 @@
   padding: 4px;
 }
 
+.noti-item{
+  padding-right: 10px;
+}
+
 .noti-item a::before{
   content: "•";
   padding-right: 16px;
