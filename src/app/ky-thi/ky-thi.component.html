@@ -7,32 +7,32 @@
   </div>
   <div class="items-container row">
     <div class="tm-items col-4">
-      <div class="tm-item" *ngFor="let i of notiCopy; let index = index">
+      <div class="tm-item" *ngFor="let i of notiList; let index = index">
         <div *ngIf="index == 1" style="padding-bottom: 12px;">
           <div class="img-container">
-            <img src="{{i.img}}" alt="" style="width: 100%;">
+            <img src="{{imgUrl[index]}}" alt="" style="width: 100%;">
           </div>
-          <a href="">{{i.title}}</a>
+          <a href="">{{i['name']}}</a>
         </div>
       </div>
-      <div class="tm-item" *ngFor="let i of notiCopy; let index = index">
+      <div class="tm-item" *ngFor="let i of notiList; let index = index">
         <div *ngIf="index == 2" style="padding-bottom: 12px;">
           <div class="img-container">
-            <img src="{{i.img}}" alt="" style="width: 100%;">
+            <img src="{{imgUrl[index]}}" alt="" style="width: 100%;">
           </div>
-          <a href="">{{i.title}}</a>
+          <a href="">{{i['name']}}</a>
         </div>
       </div>
     </div>
-    <div class="tm-highlight col-8" *ngFor="let i of notiCopy; let index = index">
+    <div class="tm-highlight col-8" *ngFor="let i of notiList; let index = index">
       <div *ngIf="index == 0">
         <div class="img-container">
-          <img src="{{i.img}}" alt="" style="width: 100%;">
+          <img src="{{imgUrl[index]}}" alt="" style="width: 100%;">
         </div>
         <div style="padding: 12px; border: 1px solid #e0e0e0; border-top: none;">
-          <a href="">{{i.title}}</a>
+          <a href="">{{i['name']}}</a>
             <p style="font-size: 14px; margin-top: 15px;">
-              {{i.short}}
+              {{i['summary']}}
             </p>
         </div>
       </div>

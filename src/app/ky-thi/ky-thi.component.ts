@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
-import { notifications } from '../Services/notifications.service';
 import { Title } from '../Services/title.service';
 import { HeaderChange } from '../Services/header.service';
+import { HttpClient } from '@angular/common/http';
+import { httpBody } from '../Services/httpBody.service';
 
 
 @Component({
@@ -10,19 +11,25 @@ import { HeaderChange } from '../Services/header.service';
   styleUrls: ['./ky-thi.component.css']
 })
 export class KyThiComponent implements OnInit,AfterViewInit{
-  constructor(private noti: notifications, private title: Title, private headerChange: HeaderChange){
+  constructor(private title: Title, private headerChange: HeaderChange, private http: HttpClient, private httpBody: httpBody){
     this.headerChange.changeHeader('KHẢO THÍ');
   }
 
   ngOnInit() {
-    for(let i=0; i < this.noti.notis.length; i++){
-      if(this.noti.notis[i].testsTag == 'HSA'){
-        this.notiCopy.push(this.noti.notis[i]);
+    this.http.post<any>(this.url, this.httpBody.body)
+    .subscribe((res)=>{
+      this.notiList = res.data;
+      let imgPreUrl:string[] = [];
+
+      for(let i =0; i < this.notiList.length; i++){
+        imgPreUrl.push(this.notiList[i]['thumbnail']);
       }
-    }
+      for(let i = 0; i < imgPreUrl.length; i++){
+        this.imgUrl.push(`https:///u2212-dev.dttt.vn/gwdevv5/file/v5/FileObject/public/${imgPreUrl[i]}/download`);
+      }
 
-
-    // this.headerChange.changeHeader('KHẢO THÍ');
+      console.log(this.notiList);
+    })
   }
 
   ngAfterViewInit(){
@@ -34,5 +41,7 @@ export class KyThiComponent implements OnInit,AfterViewInit{
     // this.headerChange.resetHeader();
   }
 
-  notiCopy: {id:string, actTag:string, testsTag: string, title: string, date: string, img: string, short: string}[] = [];
+  url = 'https://u2212-dev.dttt.vn/public/cmscore/v5/Article/GetData/GetByNewsCategoryCode/TUYENSINH';
+  notiList =[];
+  imgUrl:string[] = [];
 }
