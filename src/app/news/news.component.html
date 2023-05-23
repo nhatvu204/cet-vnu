@@ -17,15 +17,15 @@
         </div>
       </div>
     </div>
-    <div class="news-item" *ngFor="let i of news">
-        <a href=""><img [src]="i.img" alt=""></a>
+    <div class="news-item" *ngFor="let i of notiCopy; index as index">
+        <a href=""><img src="{{imgUrl[index+1]}}" alt=""></a>
         <div class="news-text">
           <div class="date-time d-flex align-items-center">
             <i class="material-icons">calendar_month</i>
-            {{i.date}}, {{i.time}}
+              {{i['releaseDate'] | date:'dd/MM/yyyy'}},{{i['releaseDate'] | date: 'hh:mm'}}
           </div>
           <a href="">
-            {{i.title}}
+            {{i['name']}}
           </a>
           <div class="details">
             <a href="">Xem chi tiết</a>
