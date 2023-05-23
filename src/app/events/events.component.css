@@ -6,6 +6,11 @@
   margin: 10px;
 }
 
+.card img{
+  object-fit: cover;
+  max-height: 199.18px;
+}
+
 .card-body{
   height: 216px;
   padding: 20px 24px;

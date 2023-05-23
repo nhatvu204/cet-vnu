@@ -1,12 +1,48 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o/lib/models/owl-options.model';
+import { httpBody } from '../Services/httpBody.service';
 
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css']
 })
-export class EventsComponent {
+export class EventsComponent implements OnInit{
+  constructor(private http: HttpClient, private httpBody: httpBody){
+    this.httpBody.body.sorts.push({"field": "releaseDate", "dir": 1});
+  }
+
+
+  ngOnInit(){
+    this.http.post<any>(this.url,this.httpBody.body)
+    .subscribe((res)=>{
+      let preList:[] = res.data;
+      for (let i = 0; i < 7; i++){
+        this.notiList.push(preList[i]);
+      }
+      console.log(this.notiList)
+
+      let imgPreUrl:string[] = [];
+      for(let i =0; i < this.notiList.length; i++){
+        imgPreUrl.push(this.notiList[i]['thumbnail']);
+      }
+      for(let i = 0; i < imgPreUrl.length; i++){
+        if (imgPreUrl[i] != null){
+          this.imgUrl.push(`https:///u2212-dev.dttt.vn/gwdevv5/file/v5/FileObject/public/${imgPreUrl[i]}/download`);
+        }
+        else{
+          this.imgUrl.push(this.defaultImg);
+        }
+      }
+    })
+  }
+
+  notiList = [];
+  url = 'https://u2212-dev.dttt.vn/public/cmscore/v5/Article/GetData/GetByNewsCategoryCode/TUYENSINH';
+  imgUrl:string[] = [];
+  defaultImg = 'https://cet.vnu.edu.vn/assets/images/TTKT/no-image.png';
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -29,46 +65,5 @@ export class EventsComponent {
     nav: true
   }
 
-  dynamicSlides = [
-    {
-      id: '1',
-      date:'15/02/2023',
-      time:'17:14',
-      src:'https://cet.vnu.edu.vn/gw/imageresize/unsafe/600x400/smart/cet.vnu.edu.vn/gw/file/v5/FileObject/public/38ad5879-a1d3-47e2-a816-78a93c5dc9b5/download',
-      alt:'Side 1',
-      title:'Hòa Lạc thêm xanh'
-    },
-    {
-      id: '2',
-      date:'17/01/2023',
-      time:'17:27',
-      src:'https://cet.vnu.edu.vn/gw/imageresize/unsafe/600x400/smart/cet.vnu.edu.vn/gw/file/v5/FileObject/public/f9fa5903-d63c-4808-9306-3be4c93b56dd/download',
-      alt:'Side 2',
-      title:'Trung tâm Khảo thí Đại học Quốc gia Hà Nội ký thỏa thuận hợp tác  với Trường Đại học Việt Nhật Đại học Quốc gia Hà Nội'
-    },
-    {
-      id: '3',
-      date:'29/122022',
-      time:'15:58',
-      src:'https://cet.vnu.edu.vn/gw/imageresize/unsafe/600x400/smart/cet.vnu.edu.vn/gw/file/v5/FileObject/public/b1228050-ed60-4001-ae32-f2fa104e549e/download',
-      alt:'Side 3',
-      title:'Lễ kết nạp Đảng viên mới năm 2022 của Chi bộ Trung tâm Khảo thí ĐHQGHN'
-    },
-    {
-      id: '4',
-      date:'31/03/2023',
-      time:'11:01',
-      src:'https://cet.vnu.edu.vn/gw/imageresize/unsafe/600x400/smart/cet.vnu.edu.vn/gw/file/v5/FileObject/public/5f80c7c3-0936-4a64-9c78-f92a25d30644/download',
-      alt:'Side 4',
-      title:'Trung tâm Khảo thí ĐHQGHN là đơn vị đầu tiên tổ chức Đại hội Đại biểu Công đoàn cấp cơ sở'
-    },
-    {
-      id: '5',
-      date:'03/03/2023',
-      time:'17:16',
-      src:'https://cet.vnu.edu.vn/gw/imageresize/unsafe/600x400/smart/cet.vnu.edu.vn/gw/file/v5/FileObject/public/162f1e81-92b5-40ad-8862-3236c7cab641/download',
-      alt:'Side 5',
-      title:'Trung tâm Khảo thí ĐHQGHN là đơn vị đầu tiên tổ chức Đại hội Đại biểu Công đoàn cấp cơ sở'
-    }
-  ]
+
 }

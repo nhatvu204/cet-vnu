@@ -4,19 +4,20 @@
   </div>
 
   <owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let slide of dynamicSlides">
-        <ng-template carouselSlide [id]="slide.id">
+    <ng-container *ngFor="let slide of notiList; index as index">
+        <ng-template carouselSlide>
+
           <div class="card shadow" style="width: 100%/3;">
             <a href="" class="shadow">
-              <img [src]="slide.src" class="card-img-top" alt="...">
+              <img src="{{imgUrl[index]}}" class="card-img-top" alt="...">
             </a>
             <div class="card-body">
               <div class="date-time d-flex align-items-center">
                 <i class="material-icons">calendar_month</i>
-                {{slide.date}}, {{slide.time}}
+                  {{slide['releaseDate'] | date:'dd/MM/yyyy'}},{{slide['releaseDate'] | date: 'hh:mm'}}
               </div>
               <div class="card-link">
-                <a href="" class="card-text">{{slide.title}}</a>
+                <a href="" class="card-text">{{slide['name']}}</a>
               </div>
               <div>
                 <a href="" class="details">Xem chi tiết</a>
