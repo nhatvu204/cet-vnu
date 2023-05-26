@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { HeaderChange } from 'src/app/Services/header.service';
 import { notifications } from 'src/app/Services/notifications.service';
 import { Title } from 'src/app/Services/title.service';
 
@@ -7,9 +8,9 @@ import { Title } from 'src/app/Services/title.service';
   templateUrl: './dai-hoc.component.html',
   styleUrls: ['./dai-hoc.component.css']
 })
-export class DaiHocComponent implements OnInit, OnDestroy {
-  constructor(private noti: notifications, private title: Title){
-
+export class DaiHocComponent implements OnInit, OnDestroy{
+  constructor(private noti: notifications, private title: Title, private headerChange: HeaderChange){
+    this.headerChange.changeHeader('KHẢO THÍ');
   }
 
   ngOnInit() {

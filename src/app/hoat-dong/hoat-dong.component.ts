@@ -25,7 +25,7 @@ export class HoatDongComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(){
-    this.title.changeTitle('Khảo thí');
+    this.title.changeTitle('Hoạt động dịch vụ');
   }
 
   ngOnDestroy(){
