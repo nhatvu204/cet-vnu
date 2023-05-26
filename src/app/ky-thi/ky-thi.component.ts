@@ -25,7 +25,12 @@ export class KyThiComponent implements OnInit,AfterViewInit{
         imgPreUrl.push(this.notiList[i]['thumbnail']);
       }
       for(let i = 0; i < imgPreUrl.length; i++){
-        this.imgUrl.push(`https:///u2212-dev.dttt.vn/gwdevv5/file/v5/FileObject/public/${imgPreUrl[i]}/download`);
+        if (imgPreUrl[i] != null){
+          this.imgUrl.push(`https:///u2212-dev.dttt.vn/gwdevv5/file/v5/FileObject/public/${imgPreUrl[i]}/download`);
+        }
+        else{
+          this.imgUrl.push(this.defaultImg);
+        }
       }
 
       console.log(this.notiList);
@@ -44,4 +49,5 @@ export class KyThiComponent implements OnInit,AfterViewInit{
   url = 'https://u2212-dev.dttt.vn/public/cmscore/v5/Article/GetData/GetByNewsCategoryCode/TUYENSINH';
   notiList =[];
   imgUrl:string[] = [];
+  defaultImg = 'https://cet.vnu.edu.vn/assets/images/TTKT/no-image.png';
 }

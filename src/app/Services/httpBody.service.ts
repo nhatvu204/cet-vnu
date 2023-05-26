@@ -5,5 +5,5 @@ import { Injectable } from "@angular/core";
 })
 
 export class httpBody{
-  body:{"filters": {}[], "sorts": {}[], "includes": {}[], "pageInfo": {"page": number, "pageSize": number}} = {"filters": [], "sorts": [], "includes": [], "pageInfo": {"page": 1, "pageSize": 15}};
+  body:{"fields":string, "filters": {}[], "sorts": {}[], "includes": {}[], "pageInfo": {"page": number, "pageSize": number}} = {"fields":"", "filters": [], "sorts": [], "includes": [], "pageInfo": {"page": 1, "pageSize": 15}};
 }

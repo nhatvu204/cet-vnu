@@ -30,7 +30,12 @@ export class TinTucComponent implements OnInit, OnDestroy{
       console.log(this.notiList);
 
       for(let i = 0; i < imgPreUrl.length; i++){
-        this.imgUrl.push(`https:///u2212-dev.dttt.vn/gwdevv5/file/v5/FileObject/public/${imgPreUrl[i]}/download`);
+        if (imgPreUrl[i] != null){
+          this.imgUrl.push(`https:///u2212-dev.dttt.vn/gwdevv5/file/v5/FileObject/public/${imgPreUrl[i]}/download`);
+        }
+        else{
+          this.imgUrl.push(this.defaultImg)
+        }
       }
       console.log(this.imgUrl);
     })
@@ -46,4 +51,5 @@ export class TinTucComponent implements OnInit, OnDestroy{
   notiList = [];
   url = 'https://u2212-dev.dttt.vn/public/cmscore/v5/Article/GetData/GetByNewsCategoryCode/TIN_TUC_SU_KIEN';
   imgUrl:string[] = [];
+  defaultImg = 'https://cet.vnu.edu.vn/assets/images/TTKT/no-image.png';
 }
