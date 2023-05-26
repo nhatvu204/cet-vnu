@@ -5,11 +5,11 @@
 </div>
 
 <div class="container d-flex justify-content-between" style="margin-top: 40px;">
-  <div class="form-container">
+  <div class="form-container" >
     <h4>
       Gửi thông tin liên hệ
     </h4>
-    <form action="" (ngSubmit) = "onSubmit(contactForm)" autocomplete="off" #contactForm = "ngForm">
+    <form action="" (ngSubmit) = "onSubmit()" autocomplete="off" [formGroup]="reactiveForm" #form = "ngForm">
       <div class="form-group">
         <label for="full-name">
           Họ và tên
@@ -17,8 +17,8 @@
             <i class="material-icons">star</i>
           </sup>
         </label>
-        <input type="text" id="full-name" style="width: 100%;" name="fullname" required ngModel #fullname = "ngModel" [class.submitted-invalid] = "contactForm.submitted && fullname.invalid">
-        <div style="margin-top: -18px;" *ngIf="contactForm.submitted && fullname.invalid">
+        <input type="text" id="full-name" style="width: 100%;" [class.submitted-invalid] = "reactiveForm.get('fullName')?.invalid && form.submitted" formControlName = "fullName">
+        <div style="margin-top: -18px;" *ngIf="reactiveForm.get('fullName')?.invalid && form.submitted">
           <small>Không được bỏ trống tên</small>
         </div>
       </div>
@@ -30,8 +30,8 @@
               <i class="material-icons">star</i>
             </sup>
           </label>
-          <input type="text" style="width: 100%;" id="email" name="email" required ngModel #email = "ngModel" [class.submitted-invalid] = "contactForm.submitted && email.invalid">
-          <div style="margin-top: -18px;" *ngIf="contactForm.submitted && email.invalid">
+          <input type="text" style="width: 100%;" id="email" [class.submitted-invalid] = "reactiveForm.get('email')?.invalid && form.submitted" formControlName = "email">
+          <div style="margin-top: -18px;" *ngIf="reactiveForm.get('email')?.invalid && form.submitted">
             <small>Không được bỏ trống email</small>
           </div>
         </div>
@@ -42,8 +42,8 @@
               <i class="material-icons">star</i>
             </sup>
           </label>
-          <input type="text" style="width: 100%;" id="phone-num" name="phone" required ngModel #phone = "ngModel" [class.submitted-invalid] = "contactForm.submitted && phone.invalid">
-          <div style="margin-top: -18px;" *ngIf="contactForm.submitted && phone.invalid">
+          <input type="text" style="width: 100%;" id="phone-num" [class.submitted-invalid] = "reactiveForm.get('phoneNum')?.invalid && form.submitted" formControlName = "phoneNum">
+          <div style="margin-top: -18px;" *ngIf="reactiveForm.get('phoneNum')?.invalid && form.submitted">
             <small>Không được bỏ trống số điện thoại</small>
           </div>
         </div>
@@ -55,14 +55,14 @@
             <i class="material-icons">star</i>
           </sup>
         </label>
-        <input type="text" style="width: 100%;" id="form-title" name="formtitle" required ngModel #formtitle = "ngModel" [class.submitted-invalid] = "contactForm.submitted && formtitle.invalid">
-        <div style="margin-top: -18px;" *ngIf="contactForm.submitted && formtitle.invalid">
+        <input type="text" style="width: 100%;" id="form-title"  [class.submitted-invalid] = "reactiveForm.get('title')?.invalid && form.submitted" formControlName = "title">
+        <div style="margin-top: -18px;" *ngIf="reactiveForm.get('title')?.invalid && form.submitted">
           <small>Không được bỏ trống tiêu đề</small>
         </div>
       </div>
       <div class="form-group">
         <label for="content">Nội dung liên hệ</label>
-        <textarea name="" id="content" rows="3" style="width: 100%;"></textarea>
+        <textarea id="content" rows="3" style="width: 100%;" formControlName = "content"></textarea>
       </div>
       <button type="submit" value="submit" class="btn" id="btn-send">Gửi thông tin</button>
     </form>

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild } from '@angular/core';
 import { Title } from '../Services/title.service';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-lien-he',
@@ -12,14 +12,20 @@ export class LienHeComponent implements OnInit, OnDestroy, AfterViewInit{
 
   }
 
-  onSubmit(form: NgForm){
-    console.log(form);
+  onSubmit(){
+    console.log(this.reactiveForm);
   }
 
   ngOnInit(){
     this.titleChange.changeTitle('Liên hệ');
 
-
+    this.reactiveForm = new FormGroup({
+      fullName: new FormControl(null, Validators.required),
+      email: new FormControl(null, Validators.required),
+      phoneNum: new FormControl(null, Validators.required),
+      title: new FormControl(null, Validators.required),
+      content: new FormControl(null)
+    })
   }
 
   ngAfterViewInit(){
@@ -30,4 +36,5 @@ export class LienHeComponent implements OnInit, OnDestroy, AfterViewInit{
     this.titleChange.resetTitle();
   }
 
+  reactiveForm: FormGroup;
 }
