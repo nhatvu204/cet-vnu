@@ -10,7 +10,7 @@
       Gửi thông tin liên hệ
     </h4>
     <form action="" (ngSubmit) = "onSubmit()" autocomplete="off" [formGroup]="reactiveForm" #form = "ngForm">
-      <div class="form-group">
+      <div class="form-group form-row">
         <label for="full-name">
           Họ và tên
           <sup>
@@ -18,11 +18,11 @@
           </sup>
         </label>
         <input class="form-control" type="text" id="full-name" style="width: 100%;" [class.submitted-invalid] = "reactiveForm.get('fullName')?.invalid && form.submitted" formControlName = "fullName">
-        <div style="margin-top: -18px;" *ngIf="reactiveForm.get('fullName')?.invalid && form.submitted">
+        <div class="d-flex justify-content-start" *ngIf="reactiveForm.get('fullName')?.invalid && form.submitted">
           <small>Không được bỏ trống tên</small>
         </div>
       </div>
-      <div class="row">
+      <div class="row form-row">
         <div class="form-group col">
           <label for="email">
             Email
@@ -31,7 +31,7 @@
             </sup>
           </label>
           <input class="form-control" type="text" style="width: 100%;" id="email" [class.submitted-invalid] = "reactiveForm.get('email')?.invalid && form.submitted" formControlName = "email">
-          <div style="margin-top: -18px;" *ngIf="reactiveForm.get('email')?.invalid && form.submitted">
+          <div class="d-flex justify-content-start" *ngIf="reactiveForm.get('email')?.invalid && form.submitted">
             <small>Không được bỏ trống email</small>
           </div>
         </div>
@@ -43,12 +43,12 @@
             </sup>
           </label>
           <input class="form-control" type="text" style="width: 100%;" id="phone-num" [class.submitted-invalid] = "reactiveForm.get('phoneNum')?.invalid && form.submitted" formControlName = "phoneNum">
-          <div style="margin-top: -18px;" *ngIf="reactiveForm.get('phoneNum')?.invalid && form.submitted">
+          <div class="d-flex justify-content-start" *ngIf="reactiveForm.get('phoneNum')?.invalid && form.submitted">
             <small>Không được bỏ trống số điện thoại</small>
           </div>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group form-row">
         <label for="form-title">
           Tiêu đề
           <sup>
@@ -56,11 +56,11 @@
           </sup>
         </label>
         <input class="form-control" type="text" style="width: 100%;" id="form-title"  [class.submitted-invalid] = "reactiveForm.get('title')?.invalid && form.submitted" formControlName = "title">
-        <div style="margin-top: -18px;" *ngIf="reactiveForm.get('title')?.invalid && form.submitted">
+        <div class="d-flex justify-content-start" *ngIf="reactiveForm.get('title')?.invalid && form.submitted">
           <small>Không được bỏ trống tiêu đề</small>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group form-row">
         <label for="content">Nội dung liên hệ</label>
         <textarea class="form-control" id="content" rows="3" style="width: 100%;" formControlName = "content"></textarea>
       </div>
