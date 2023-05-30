@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -9,8 +13,6 @@ import { HeadingComponent } from './heading/heading.component';
 import { HeadingMenuComponent } from './heading-menu/heading-menu.component';
 import { TestNotificationsComponent } from './test-notifications/test-notifications.component';
 import { EventsComponent } from './events/events.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NewsComponent } from './news/news.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { FooterNavComponent } from './footer-nav/footer-nav.component';
@@ -22,7 +24,6 @@ import { TinTucComponent } from './tin-tuc/tin-tuc.component';
 import { KyThiComponent } from './ky-thi/ky-thi.component';
 import { HoatDongComponent } from './hoat-dong/hoat-dong.component';
 import { LienHeComponent } from './lien-he/lien-he.component';
-import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
 import { GtGioiThieuComponent } from './gioi-thieu/gt-gioi-thieu/gt-gioi-thieu.component';
 import { GtToChucComponent } from './gioi-thieu/gt-to-chuc/gt-to-chuc.component';
@@ -34,7 +35,6 @@ import { ChungComponent } from './ky-thi/chung/chung.component';
 import { SauDaiHocComponent } from './ky-thi/sau-dai-hoc/sau-dai-hoc.component';
 import { KiemTraComponent } from './hoat-dong/kiem-tra/kiem-tra.component';
 import { TapHuanComponent } from './hoat-dong/tap-huan/tap-huan.component';
-import { HttpClientModule } from '@angular/common/http';
 
 const appRoute: Routes = [
   {path:'', component: HomeComponent},
